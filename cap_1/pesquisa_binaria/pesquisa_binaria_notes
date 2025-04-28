@@ -1,0 +1,14 @@
+#Pesquisa Binaria
+--> é um algoritmo
+--> recebe uma lista ordenada de elementos
+## A pesquisa binaria vai dividindo o problema, ela vai chutando um numero intermediario
+e eliminando metade
+ex: tem uma lista com 100 numero e eu escolho o numero 20
+o algortimo vai chutar o numero 50 e verificar se acertou ou não
+se não tiver acertado, o algortimo vai verificar se o numero é maior ou menor
+dependendo da resposta, o algoritmo vai eliminar metade dos numero,
+no caso 50 é maior que o numero escolhido, então agora vamos ficar apenas com 50 elementos,
+e depois chutar o numero intermediario que é 25, 25 ainda é maior, e agora a lista passa a ter
+25 elementos, e chutamos 13, 13 é menor, então elimina todos o numeros menores que treze e assim
+vai fazendo até achar o numero que escolhemos
+obs: lembrando que a lista na maioria das linguagens a posicao dos numeros começa em 0
