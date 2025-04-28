@@ -1,7 +1,3 @@
-Claro! Aqui está um exemplo de um README para seu projeto de estudos de algoritmos, baseado no livro *Entendendo Algoritmos* (do autor Aditya Bhargava):
-
----
-
 # 📚 Estudos de Algoritmos
 
 Este repositório é dedicado aos meus estudos de algoritmos, com base no livro **"Entendendo Algoritmos: Um Guia Ilustrado Para Programadores e Outros Curiosos"** de Aditya Bhargava.
