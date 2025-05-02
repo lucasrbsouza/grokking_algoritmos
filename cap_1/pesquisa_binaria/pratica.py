@@ -1,20 +1,18 @@
-def busca_binaria(lista, item):
+def busca_binaria(lista,item):
     inicio = 0
-    fim = len(lista) - 1
-    while inicio <= fim:
-        meio = (inicio + fim)//2
+    fim = len(lista)
+    while inicio < fim:
+        meio = (inicio + fim) // 2
+        chute = lista[meio]
 
-        if lista[meio] == item:
+        if chute == item:
             return meio
-
-        if lista[meio] > item:
-            fim = meio - 1
-
-        else:
+        if chute < item:
             inicio = meio + 1
-
+        else:
+            fim = meio - 1
     return None
 
 if __name__ == "__main__":
     lista = [1,2,3,4,5,6,7]
-    print(busca_binaria(lista, 2))
+    print(busca_binaria(lista, 6))

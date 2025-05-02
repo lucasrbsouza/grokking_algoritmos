@@ -33,4 +33,4 @@ if __name__ == '__main__':
     # Lista ordenada
     lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     # Procura pelo número 5 na lista
-    print(pesquisa_binaria(lista, 5))  # Saída esperada: 4
+    print(pesquisa_binaria(lista, 10))  # Saída esperada: 4
