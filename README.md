@@ -30,8 +30,8 @@ Cada algoritmo inclui:
 
 ## 🛠 Tecnologias
 
-- Linguagem principal: [escolha sua linguagem aqui, ex: Python, JavaScript, etc.]
-- Editor: [ex: VS Code, PyCharm]
+- Linguagem principal: Python
+- Editor: PyCharm
 - Controle de versão: Git + GitHub
 
 ## 📚 Referência
