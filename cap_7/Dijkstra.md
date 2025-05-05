@@ -31,3 +31,106 @@ Ele funciona em **4 etapas principais** e é muito útil em problemas como encon
 4. **Reconstruir o caminho final.**
    Depois de atualizar os custos, usamos as informações salvas para encontrar o caminho de menor custo até o destino.
 
+
+## Pseudocódigo
+
+```plaintext
+Entrada:
+- grafo com pesos positivos
+- vértice inicial
+
+Inicialize:
+- custo[vértice] = infinito (∞), exceto o inicial que é 0
+- predecessores[vértice] = indefinido
+- conjunto de vértices não processados
+
+Enquanto houver vértices não processados:
+    - selecione o vértice com menor custo
+    - para cada vizinho do vértice:
+        - novo_custo = custo[vértice atual] + peso(aresta)
+        - se novo_custo < custo[vizinho]:
+            - custo[vizinho] = novo_custo
+            - predecessores[vizinho] = vértice atual
+    - marque vértice como processado
+
+Saída:
+- custo mínimo para cada vértice
+- caminho mais curto reconstruído a partir dos predecessores
+````
+
+---
+
+## Exemplo de aplicação do algoritmo de Dijkstra
+
+### Grafo:
+
+```
+     A
+   /   \
+  6     1
+ /       \
+B --- 2 --- C
+ \         /
+  \--- 1 --/
+```
+
+### Tabela de pesos:
+
+| De | Para | Peso |
+| -- | ---- | ---- |
+| A  | B    | 6    |
+| A  | C    | 1    |
+| B  | C    | 2    |
+| B  | D    | 1    |
+| C  | D    | 5    |
+
+Vamos encontrar o **caminho mais curto de A até D**.
+
+### Execução passo a passo:
+
+1. Início em A:
+
+   * custo\[A] = 0
+   * custo\[B] = ∞
+   * custo\[C] = ∞
+   * custo\[D] = ∞
+
+2. A → C (peso 1):
+
+   * custo\[C] = 0 + 1 = 1
+   * predecessor\[C] = A
+
+3. A → B (peso 6):
+
+   * custo\[B] = 0 + 6 = 6
+   * predecessor\[B] = A
+
+4. C → D (peso 5):
+
+   * custo\[D] = 1 + 5 = 6
+   * predecessor\[D] = C
+
+5. C → B (peso 2):
+
+   * custo\[B] = min(6, 1 + 2) = 3
+   * predecessor\[B] = C
+
+6. B → D (peso 1):
+
+   * custo\[D] = min(6, 3 + 1) = 4
+   * predecessor\[D] = B
+
+### Resultados finais:
+
+| Vértice | Custo mínimo | Caminho       |
+| ------- | ------------ | ------------- |
+| A       | 0            | A             |
+| B       | 3            | A → C → B     |
+| C       | 1            | A → C         |
+| D       | 4            | A → C → B → D |
+
+---
+
+## Conclusão
+
+O algoritmo de Dijkstra é eficiente e confiável para encontrar caminhos mínimos em grafos com pesos positivos. Ele garante o menor custo de caminho entre um ponto inicial e os demais vértices do grafo.
