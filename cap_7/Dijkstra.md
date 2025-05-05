@@ -1,20 +1,33 @@
-# Algortimo de Dijkstra
-o algoritmo de Dijkstra (vou chamar de djk) encontra o caminho mais rápido em um grafo
-ele possui 4 etapas
-o algoritmo de djk atribuimos um peso a cada segmento e ele encontra o caminho com o menor peso total
-peso é o numero associado a uma aresta de um grafo
-um grafo com peso é chamado de grafo ponderado 
-e um grafo sem peso é chamado de grafo não ponderado
-para calcular o caminho minimo de um grafo não ponderado utilizamo a pesquisa em largura
-para calcular o caminho minimo de um grafo ponderado utilizamos o algoritmo de djk
-um ciclo em um grafo indica que é possivel começar em um vertice e terminar nele
-e por isso um ciclo jamais fornecera um caminho minino em um grafo ponderado
-um grafo não direcionado indica que dois vertices podem apontar um para o outro, e um grafo não direcionado em um ciclo
-o algortimo de djk funciona em um grafo aciclico dirigido(DAG)
-não podemos utilizar o algortimo de djk em um grafo com arestas com pesos negativas
-para isso podemos utilizar o algortimo de Bellman-Ford
-o algoritmo de djk tem 4 etapas:
-1) Encontrar o vertice mais "barato". É o vertice em que podemos consgeuir chegar no menor tempo possivel
-2) verifciar se há um caminho mais barato para os vizinhos desse vertice. caso exista atualize os custos deles
-3) repita até que podemos ter feito isso para cada vertice do grafo
-4) calcule o caminho final
+# Algoritmo de Dijkstra
+
+O algoritmo de Dijkstra (que vamos chamar de **DJK**) é usado para encontrar o caminho mais curto entre dois pontos em um **grafo ponderado** (ou seja, um grafo em que cada aresta tem um peso, que normalmente representa distância, tempo ou custo).
+
+Ele funciona em **4 etapas principais** e é muito útil em problemas como encontrar a rota mais rápida em um mapa.
+
+## Conceitos importantes
+
+* **Peso**: é um número associado a uma aresta (ligação entre dois vértices) que indica o custo de percorrer aquele caminho.
+* **Grafo ponderado**: é um grafo onde todas as arestas têm pesos definidos.
+* **Grafo não ponderado**: é um grafo onde as arestas não possuem pesos.
+* Para encontrar o caminho mais curto em um **grafo não ponderado**, usamos a **busca em largura**.
+* Para encontrar o caminho mais curto em um **grafo ponderado**, usamos o **algoritmo de Dijkstra**.
+* Um **ciclo** em um grafo é um caminho que começa e termina no mesmo vértice. Ciclos **não atrapalham** o funcionamento do algoritmo, **desde que os pesos das arestas sejam positivos**.
+* Um **grafo direcionado** é aquele onde as arestas têm direção (ou seja, ir de A para B não significa que é possível voltar de B para A).
+* Um **grafo não direcionado** é aquele em que as arestas permitem ida e volta entre os vértices conectados.
+* O algoritmo de DJK **não funciona com arestas de peso negativo**. Para esses casos, usamos o **algoritmo de Bellman-Ford**.
+
+## Etapas do algoritmo de Dijkstra
+
+1. **Escolher o vértice mais "barato" ainda não processado.**
+   Isso significa escolher o vértice de onde conseguimos chegar com o menor custo até o momento.
+
+2. **Verificar os vizinhos desse vértice.**
+   Para cada vizinho, calculamos o custo total do caminho passando por esse vértice.
+   Se for mais barato do que o custo atual salvo para esse vizinho, **atualizamos o custo**.
+
+3. **Marcar o vértice atual como "processado".**
+   Repetimos o processo até que todos os vértices tenham sido processados.
+
+4. **Reconstruir o caminho final.**
+   Depois de atualizar os custos, usamos as informações salvas para encontrar o caminho de menor custo até o destino.
+
