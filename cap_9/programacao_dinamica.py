@@ -12,3 +12,10 @@ def mochila(valores, pesos, capacidade):
                 tabela[i][w] = tabela[i - 1][w]
 
     return tabela[n][capacidade]
+
+if __name__ == '__main__':
+    valores = [60, 100, 120]
+    pesos = [10, 20, 30]
+    capacidade = 50
+
+    print(mochila(valores, pesos, capacidade))
